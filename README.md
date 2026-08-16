@@ -14,14 +14,18 @@
 [express](https://expressjs.com/)
 
 ## comandos
-
 ### iniciar o backend
 ``` bash
 npm run backend
 ```
-
 ### iniciar o frontend
 ``` bash
 cd frontend
 npm run dev
 ```
+### rodar os testes de api
+``` bash
+npm test
+```
+# artigos
+[Mastering API Testing with Supertest, Express.js, and Jest](https://www.dennisokeeffe.com/blog/2023-10-27-testing-express-apps-with-jest-and-supertest)
