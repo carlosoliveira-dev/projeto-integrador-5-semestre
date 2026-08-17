@@ -7,6 +7,7 @@
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [nodejs](https://nodejs.org/en)
 [sqlite](https://sqlite.org/)
+[node sqlite](https://nodejs.org/api/sqlite.html)
 [Jest](https://jestjs.io/)
 [supertest](https://www.npmjs.com/package/supertest)
 [React](https://react.dev/)
