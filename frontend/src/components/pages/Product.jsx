@@ -5,7 +5,7 @@ export default function Product() {
         <h1>Cadastro de Produtos</h1>
     </header>
 
-    <form action="/pagina-processa-dados-do-form" method="post" enctype="multipart/form-data">
+    <form action="/pagina-processa-dados-do-form" method="post" encType="multipart/form-data">
     <div>
         <label htmlFor="nome_produto">Nome do Produto:</label>
         <input type="text" id="nome_produto" placeholder="Insira o nome do produto" required/>
