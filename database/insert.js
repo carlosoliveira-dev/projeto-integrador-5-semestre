@@ -21,6 +21,12 @@ async function insert(){
         CNPJ: '00.000.000.00-00',
         NomeContatoPrincipal: 'Ana Luiza',
     });
+    
+    const produto = await Product.findByPk(1);
+    await produto.addFornecedor(1);
+    
+    const produto2 = await Product.findByPk(2);
+    await produto2.addFornecedor(1)
 }
 
 insert()

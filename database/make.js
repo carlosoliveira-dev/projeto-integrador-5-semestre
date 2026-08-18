@@ -42,6 +42,16 @@ const Supplier = sequelize.define('Fornecedor', {
     Email: DataTypes.STRING,
 });
 
+Product.belongsToMany(Supplier, { 
+    through: 'ProdutoFornecedor',
+    foreignKey: 'produtoId'
+});
+
+Supplier.belongsToMany(Product, { 
+    through: 'ProdutoFornecedor',
+    foreignKey: 'fornecedorId'
+});
+
 async function make(){
     await sequelize.sync();
 }
