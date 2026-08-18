@@ -13,6 +13,7 @@
 [React](https://react.dev/)
 [NEXT.js](https://nextjs.org/)
 [express](https://expressjs.com/)
+[sequelize](https://sequelize.org/)
 
 ## comandos
 ### iniciar o backend
