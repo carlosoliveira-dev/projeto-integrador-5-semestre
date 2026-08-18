@@ -2,14 +2,40 @@ const { makeDatabase, makeTables } = require('../database/make');
 const request = require('supertest');
 const app = require('./app');
 
-beforeAll(() => {
-  console.log('beforeAll')
-  const sequelize = makeDatabase('database/databasetests.sqlite');
-  makeTables(sequelize);
+let sequelize;
+let Product;
+let Supplier;
+
+beforeAll(async () => {
+  sequelize = makeDatabase('database/databasetests.sqlite');
+  ({Product, Supplier } = await makeTables(sequelize));
+  
+  const Phone = await Product.create({
+      NomeProduto: 'Galaxy A10',
+      Descricao: 'Smartphone não muito eficiente...'
+  });
+
 });
 
-afterAll(() => {
-  console.log('afterAll')
+afterAll(async () => {
+  const produto = await Product.findByPk(1);
+  console.log(produto);
+  await sequelize.close()
+
+  const fs = require('fs');
+  
+  try {
+  fs.unlinkSync('database/databasetests.sqlite');
+  console.log('Arquivo excluído com sucesso!');
+  } 
+  catch (error) {
+    if (error.code === 'ENOENT') {
+    console.log('O arquivo não existe.');
+  } 
+  else {
+    console.error('Erro ao excluir:', error.message);
+    }
+  }
 });
 
 describe('GET /', () => {
