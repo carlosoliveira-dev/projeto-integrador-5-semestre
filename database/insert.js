@@ -1,10 +1,12 @@
-const {sequelize, Product, Supplier} = require('./make')
+const {makeDatabase, makeTables} = require('./make')
 
-const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = makeDatabase('database.sqlite');
 
-async function insert(){
-    await sequelize.authenticate();
-    await sequelize.sync();
+async function insert(sequelizeInstance){
+    await sequelizeInstance.authenticate();
+    await sequelizeInstance.sync();
+    
+    const { Product, Supplier } = await makeTables(sequelizeInstance);    
 
     const Phone = await Product.create({
         NomeProduto: 'Galaxy A10',
@@ -29,4 +31,4 @@ async function insert(){
     await produto2.addFornecedor(1)
 }
 
-insert()
+insert(sequelize);
