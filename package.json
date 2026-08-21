@@ -16,7 +16,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --watchAll",
-    "backend": "node backend/server.js"
+    "backend": "node --watch backend/server.js"
   },
   "dependencies": {
     "express": "^5.2.1",
