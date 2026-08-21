@@ -1,3 +1,4 @@
+const { getAllProducts } = require('./controllers/Product');
 const express = require('express');
 const app = express()
 
@@ -6,7 +7,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/produto', (req, res) => {
-  res.send('get produtos');
+  msg = getAllProducts()
+  res.send(msg);
 });
 
 app.get('/produto/:id', (req, res) => {
