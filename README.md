@@ -1,5 +1,5 @@
 # projeto-integrador-5-semestre
-[FACULDADE GRAN](https://faculdade.grancursosonline.com.br/)
+[GRAN FACULDADE](https://faculdade.grancursosonline.com.br/)
 
 ## tecnologias
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)

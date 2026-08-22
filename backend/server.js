@@ -1,7 +1,13 @@
-const app = require("./app");
+const { app, initDatabase } = require('./app');
+const PORT = process.env.PORT || 3000;
 
-const port = 3000
+async function startServer() {
+  // Aguarda o banco de dados inicializar
+  await initDatabase();
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+}
+
+startServer();
